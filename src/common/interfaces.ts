@@ -1,12 +1,12 @@
 import { Control } from 'react-hook-form';
 
 export interface ILoginProps {
-  userName: string;
+  username: string;
   password: string;
 }
 export interface ILoginInput {
   control: Control<ILoginProps> | undefined;
-  name: 'userName' | 'password';
+  name: 'username' | 'password';
   placeholder: string;
   type: string;
 }

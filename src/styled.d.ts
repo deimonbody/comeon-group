@@ -8,6 +8,7 @@ declare module 'styled-components' {
       white: string;
       btnColor: string;
       error: string;
+      btnLoading: string;
     };
     fonts: {
       bold: string;
