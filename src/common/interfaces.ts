@@ -17,3 +17,6 @@ export interface IUser {
   avatar: string | null;
   event: string | null;
 }
+export interface IWrapper {
+  children: JSX.Element | JSX.Element[];
+}

@@ -9,6 +9,8 @@ declare module 'styled-components' {
       btnColor: string;
       error: string;
       btnLoading: string;
+      grayColor: string;
+      grayText: string;
     };
     fonts: {
       bold: string;

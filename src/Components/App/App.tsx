@@ -4,16 +4,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { myTheme } from '../../myTheme';
 import { PATHES } from '../../common/enum';
-import { Login } from '../Login/Login';
+import { Login } from '../LoginPage/Login';
 import 'react-toastify/dist/ReactToastify.css';
-// import { useAuthorized } from '../../hooks';
+import { MainPage } from '../MainPage/MainPage';
 
 export const App = () => {
-  // const isAuthorized = useAuthorized();
   return (
     <ThemeProvider theme={myTheme}>
       <BrowserRouter>
         <Routes>
+          <Route path={PATHES.MAIN} element={<MainPage />} />
           <Route path={PATHES.LOGIN} element={<Login />} />
         </Routes>
       </BrowserRouter>
