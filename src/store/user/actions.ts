@@ -24,6 +24,6 @@ const setUser = createAsyncThunk(
     }
   }
 );
-const setLoading = createAction(UserActions.SET_LOADING);
+const setLoading = createAction(UserActions.SET_USER_LOADING);
 
 export { setUser, setLoading };

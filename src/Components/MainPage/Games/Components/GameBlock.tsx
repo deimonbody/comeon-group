@@ -8,21 +8,21 @@ import {
   GameBtn,
   GameBlockLine,
 } from '../../../Styled/Games';
-import Game from '../../../../images/deadoralive.jpg';
+import { IGame } from '../../../../common/interfaces';
 
-export const GameBlock = () => {
+interface IProps {
+  game: IGame;
+}
+
+export const GameBlock: React.FC<IProps> = ({ game }) => {
   return (
     <GameBlockWrapper>
       <GameBlockImg>
-        <img src={Game} alt="Game" />
+        <img src={game.icon} alt="Game" />
       </GameBlockImg>
       <GamesBlockInfo>
-        <GameName>Dead or Alive</GameName>
-        <GameDescription>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident veniam ipsa, esse
-          dignissimos ea quidem odio est eligendi delectus ducimus, nemo quam inventore ratione, et
-          accusantium temporibus nisi nam.
-        </GameDescription>
+        <GameName>{game.name}</GameName>
+        <GameDescription>{game.description}</GameDescription>
         <GameBtn>Play</GameBtn>
       </GamesBlockInfo>
       <GameBlockLine />
