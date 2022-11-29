@@ -1,6 +1,6 @@
 import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import { ILoginProps, IUser } from '../../common/interfaces';
-import { loginUserAPI } from '../../helper/api.helper';
+import { loginUserAPI, logoutUserAPI } from '../../helper/api.helper';
 import { UserActions } from './common';
 
 const setUser = createAsyncThunk(
@@ -25,5 +25,12 @@ const setUser = createAsyncThunk(
   }
 );
 const setLoading = createAction(UserActions.SET_USER_LOADING);
-
-export { setUser, setLoading };
+const logout = createAsyncThunk(UserActions.LOGOUT_USER, async (username: string) => {
+  try {
+    const result = await logoutUserAPI(username);
+    return result;
+  } catch (err) {
+    throw new Error(err as string);
+  }
+});
+export { setUser, setLoading, logout };

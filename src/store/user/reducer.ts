@@ -13,5 +13,15 @@ export const userReducer = (builder: ActionReducerMapBuilder<IState>) => {
     })
     .addCase(userActions.setUser.rejected, (state) => {
       state.isLoading = false;
+    })
+    .addCase(userActions.logout.fulfilled, (state) => {
+      state.isLoading = false;
+      state.user = {
+        username: null,
+        password: null,
+        name: null,
+        avatar: null,
+        event: null,
+      };
     });
 };

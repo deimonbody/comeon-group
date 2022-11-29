@@ -97,7 +97,7 @@ module.exports = (req, res, next) => {
             }
 
         } else if(req.path === '/logout') {
-            var username = req.body.username;
+            var username = req.body.body.username;
             if (username in players) {
                 res.status(200).json({
                     status: 'success'
