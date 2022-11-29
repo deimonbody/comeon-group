@@ -12,4 +12,7 @@ const setGames = createAsyncThunk(GameActions.SET_GAMES, async (): Promise<IGame
   }
 });
 const setLoading = createAction(GameActions.SET_GAMES_LOADING);
-export { setGames, setLoading };
+const searchGame = createAction(GameActions.SET_SEARCH_GAME_WORD, (word: string) => ({
+  payload: { word },
+}));
+export { setGames, setLoading, searchGame };

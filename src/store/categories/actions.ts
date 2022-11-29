@@ -15,4 +15,14 @@ const setCategories = createAsyncThunk(
   }
 );
 const setLoading = createAction(CategoriesActions.SET_CATEGORY_LOADING);
-export { setLoading, setCategories };
+const setActiveCategory = createAction(
+  CategoriesActions.SET_ACTIVE_CATEGORY,
+  (categoryId: number) => {
+    return {
+      payload: {
+        categoryId,
+      },
+    };
+  }
+);
+export { setLoading, setCategories, setActiveCategory };

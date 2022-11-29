@@ -5,6 +5,7 @@ import { categoriesReducer } from './reducer';
 const initialState: IState = {
   isLoading: false,
   categories: [],
+  activeCategoryId: null,
 };
 
 const { reducer } = createSlice({
