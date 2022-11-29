@@ -52,9 +52,6 @@ export const GameBlockImg = styled.div`
     height: 100%;
     object-fit: contain;
   }
-  @media screen and (max-width: 992px) {
-    flex-basis: 150px;
-  }
   @media screen and (max-width: 768px) {
     display: none;
   }

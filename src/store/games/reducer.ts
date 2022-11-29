@@ -13,5 +13,8 @@ export const gamesReducer = (builder: ActionReducerMapBuilder<IState>) => {
     })
     .addCase(gamesAction.setLoading, (state) => {
       state.isLoading = true;
+    })
+    .addCase(gamesAction.searchGame, (state, actions) => {
+      state.searchGameWord = actions.payload.word;
     });
 };

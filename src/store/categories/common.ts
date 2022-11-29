@@ -3,8 +3,10 @@ import { ICategory } from '../../common/interfaces';
 export interface IState {
   isLoading: boolean;
   categories: ICategory[];
+  activeCategoryId: number | null;
 }
 export enum CategoriesActions {
   SET_CATEGORY_LOADING = 'SET_CATEGORY_LOADING',
   SET_CATEGORIES = 'SET_CATEGORIES',
+  SET_ACTIVE_CATEGORY = 'SET_ACTIVE_CATEGORY',
 }

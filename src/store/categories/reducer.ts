@@ -13,5 +13,8 @@ export const categoriesReducer = (builder: ActionReducerMapBuilder<IState>) => {
     })
     .addCase(categoriesActions.setCategories.rejected, (state) => {
       state.isLoading = false;
+    })
+    .addCase(categoriesActions.setActiveCategory, (state, actions) => {
+      state.activeCategoryId = actions.payload.categoryId;
     });
 };

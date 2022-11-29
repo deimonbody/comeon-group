@@ -5,6 +5,7 @@ import { gamesReducer } from './reducer';
 const initialState: IState = {
   isLoading: false,
   games: [],
+  searchGameWord: null,
 };
 const { reducer } = createSlice({
   name: 'gamesReducer',
