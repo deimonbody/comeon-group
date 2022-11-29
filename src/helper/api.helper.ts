@@ -1,4 +1,4 @@
-import { ILoginProps } from '../common/interfaces';
+import { ICategory, IGame, ILoginProps } from '../common/interfaces';
 import instance from '../config/axios.config';
 
 const loginUserAPI = async ({ username, password }: ILoginProps) => {
@@ -14,4 +14,12 @@ const loginUserAPI = async ({ username, password }: ILoginProps) => {
   });
   return result;
 };
-export { loginUserAPI };
+const loadGamesAPI = async () => {
+  const result = await instance.get('/games');
+  return result.data as IGame[];
+};
+const loadCategoriesAPI = async () => {
+  const result = await instance.get('/categories');
+  return result.data as ICategory[];
+};
+export { loginUserAPI, loadGamesAPI, loadCategoriesAPI };

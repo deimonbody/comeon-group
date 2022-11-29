@@ -20,3 +20,14 @@ export interface IUser {
 export interface IWrapper {
   children: JSX.Element | JSX.Element[];
 }
+export interface IGame {
+  categoryIds: number[];
+  code: string;
+  description: string;
+  icon: string;
+  name: string;
+}
+export interface ICategory {
+  name: string;
+  id: number;
+}
