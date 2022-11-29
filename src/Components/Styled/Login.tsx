@@ -3,6 +3,9 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import { ILoginInput } from '../../common/interfaces';
 
+export interface ILoginBtnProps {
+  isDisable: boolean;
+}
 export const LoginTitle = styled.p`
   color: ${(props) => props.theme.colors.black};
   font-family: '${(props) => props.theme.fonts.bold}';
@@ -52,11 +55,13 @@ export const LoginInputStyled = styled.div`
     bottom: 5px;
   }
 `;
-export const LoginBtn = styled.div`
+export const LoginBtn = styled.div<ILoginBtnProps>`
   border-radius: ${(props) => props.theme.borderRadius};
   color: ${(props) => props.theme.colors.white};
-  background-color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) =>
+    props.isDisable ? props.theme.colors.btnLoading : props.theme.colors.black};
   font-size: 1rem;
+  cursor: ${(props) => (props.isDisable ? 'auto' : 'pointer')};
   font-family: ${(props) => props.theme.fonts.medium};
   text-align: center;
   padding: 10px 25px;

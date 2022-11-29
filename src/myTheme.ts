@@ -8,6 +8,7 @@ const myTheme: DefaultTheme = {
     black: '#000',
     btnColor: '#red',
     error: '#ff6262',
+    btnLoading: '#8c8787',
   },
   fonts: {
     regular: 'Roboto-reg',

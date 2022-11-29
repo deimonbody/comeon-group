@@ -1,7 +1,7 @@
 import joi from 'joi';
 
 export const loginSchema = joi.object({
-  userName: joi
+  username: joi
     .string()
     .max(15)
     .message('The name should be max 15 symbols')
