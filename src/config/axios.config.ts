@@ -7,4 +7,8 @@ const axiosConfig = {
 
 const instance = axios.create(axiosConfig);
 
+instance.interceptors.response.use(
+  (res) => res,
+  (err) => Promise.reject(err.response.data.error)
+);
 export default instance;
