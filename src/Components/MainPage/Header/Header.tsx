@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   HeaderWrapper,
   HeaderUserBlock,
@@ -12,9 +12,15 @@ import {
   HeaderFirstLine,
 } from '../../Styled/Header';
 import Search from '../../../images/search.png';
+import { userActions } from '../../../store/user';
 
 export const Header = () => {
   const { user } = useAppSelector((store) => store.userReducer);
+  const dispatch = useAppDispatch();
+  const logoutHandler = () => {
+    dispatch(userActions.setLoading());
+    dispatch(userActions.logout(user.username as string));
+  };
   return (
     <>
       <HeaderWrapper>
@@ -33,7 +39,7 @@ export const Header = () => {
             <img src={Search} alt="search" />
           </HeaderInputBlock>
         </HeaderFirstLine>
-        <LogOutBtn>Log Out</LogOutBtn>
+        <LogOutBtn onClick={logoutHandler}>Log Out</LogOutBtn>
       </HeaderWrapper>
     </>
   );
