@@ -18,6 +18,12 @@ const players = {
         "avatar": "images/avatar/stoffe.jpg",
         "event": "Your are a rock star",
         "password": "rock"
+    },
+    "deimonbody":{
+        "name":"Dima Pavlov",
+        "avatar": "images/avatar/stoffe.jpg",
+        "event": "I am a developer",
+        "password": "goldvju81"
     }
 };
 

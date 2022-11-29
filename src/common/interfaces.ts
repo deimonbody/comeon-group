@@ -10,3 +10,10 @@ export interface ILoginInput {
   placeholder: string;
   type: string;
 }
+export interface IUser {
+  username: string | null;
+  password: string | null;
+  name: string | null;
+  avatar: string | null;
+  event: string | null;
+}

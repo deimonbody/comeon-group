@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { toast } from 'react-toastify';
 import { ILoginProps } from '../../common/interfaces';
 import { LoginBtn, LoginInput, LoginTitle, LoginWrapper } from '../Styled/Login';
 import { loginSchema } from '../../common/schemas';
-import { loginUserAPI } from '../../helper/api.helper';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { userActions } from '../../store/user';
 
 export const Login = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { control, handleSubmit } = useForm<ILoginProps>({
+  const dispatch = useAppDispatch();
+  const { control, handleSubmit, reset } = useForm<ILoginProps>({
     mode: 'onChange',
     defaultValues: {
       username: '',
@@ -17,16 +18,14 @@ export const Login = () => {
     },
     resolver: joiResolver(loginSchema),
   });
+  const { isLoading } = useAppSelector((store) => store.userReducer);
   const onSubmit = (data: ILoginProps) => {
-    setIsLoading(true);
-    loginUserAPI(data)
-      .then(() => {
-        toast.success('Succes!');
-      })
-      .catch((err) => {
-        toast.error(err.response.data.error);
-      })
-      .finally(() => setIsLoading(false));
+    dispatch(userActions.setLoading());
+    dispatch(userActions.setUser(data))
+      .unwrap()
+      .then(() => toast.success('Succes!'))
+      .catch((err) => toast.error(err.message));
+    reset();
   };
   return (
     <LoginWrapper>

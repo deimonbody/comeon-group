@@ -1,7 +1,7 @@
 import { ILoginProps } from '../common/interfaces';
 import instance from '../config/axios.config';
 
-export const loginUserAPI = async ({ username, password }: ILoginProps) => {
+const loginUserAPI = async ({ username, password }: ILoginProps) => {
   const result = await instance.post('/login', {
     headers: {
       Accept: 'application/json',
@@ -14,3 +14,4 @@ export const loginUserAPI = async ({ username, password }: ILoginProps) => {
   });
   return result;
 };
+export { loginUserAPI };

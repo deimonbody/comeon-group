@@ -6,8 +6,10 @@ import { myTheme } from '../../myTheme';
 import { PATHES } from '../../common/enum';
 import { Login } from '../Login/Login';
 import 'react-toastify/dist/ReactToastify.css';
+// import { useAuthorized } from '../../hooks';
 
 export const App = () => {
+  // const isAuthorized = useAuthorized();
   return (
     <ThemeProvider theme={myTheme}>
       <BrowserRouter>
@@ -22,9 +24,9 @@ export const App = () => {
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
+        pauseOnFocusLoss={false}
         draggable
-        pauseOnHover
+        pauseOnHover={false}
         theme="light"
       />
     </ThemeProvider>
