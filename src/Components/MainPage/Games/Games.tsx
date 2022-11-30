@@ -5,7 +5,10 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { GamesTitle, GamesWrapper, Line } from '../../Styled/Games';
 import { GameBlock } from './Components/GameBlock';
 
-export const Games = () => {
+interface IProps {
+  setGameStartHandler: () => void;
+}
+export const Games: React.FC<IProps> = ({ setGameStartHandler }) => {
   const { games, searchGameWord } = useAppSelector((store) => store.gamesReducer);
   const { activeCategoryId } = useAppSelector((store) => store.categoriesReducer);
   const [filteredGames, setFilteredGames] = useState<IGame[]>(games);
@@ -39,7 +42,9 @@ export const Games = () => {
         <Line />
       </GamesTitle>
       {filteredGames.length ? (
-        filteredGames.map((game) => <GameBlock game={game} key={game.code} />)
+        filteredGames.map((game) => (
+          <GameBlock setGameStartHandler={setGameStartHandler} game={game} key={game.code} />
+        ))
       ) : (
         <p>Nothing was founded...</p>
       )}

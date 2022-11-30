@@ -12,9 +12,18 @@ import { IGame } from '../../../../common/interfaces';
 
 interface IProps {
   game: IGame;
+  setGameStartHandler: () => void;
 }
-
-export const GameBlock: React.FC<IProps> = ({ game }) => {
+declare global {
+  interface Window {
+    comeon: any;
+  }
+}
+export const GameBlock: React.FC<IProps> = ({ game, setGameStartHandler }) => {
+  const startGameHanlder = () => {
+    setGameStartHandler();
+    window.comeon.game.launch(game.code);
+  };
   return (
     <GameBlockWrapper>
       <GameBlockImg>
@@ -23,7 +32,7 @@ export const GameBlock: React.FC<IProps> = ({ game }) => {
       <GamesBlockInfo>
         <GameName>{game.name}</GameName>
         <GameDescription>{game.description}</GameDescription>
-        <GameBtn>Play</GameBtn>
+        <GameBtn onClick={startGameHanlder}>Play</GameBtn>
       </GamesBlockInfo>
       <GameBlockLine />
     </GameBlockWrapper>

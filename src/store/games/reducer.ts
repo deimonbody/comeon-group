@@ -1,6 +1,7 @@
 import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
 import { IState } from './common';
 import * as gamesAction from './actions';
+import { logout } from '../user/actions';
 
 export const gamesReducer = (builder: ActionReducerMapBuilder<IState>) => {
   builder
@@ -16,5 +17,9 @@ export const gamesReducer = (builder: ActionReducerMapBuilder<IState>) => {
     })
     .addCase(gamesAction.searchGame, (state, actions) => {
       state.searchGameWord = actions.payload.word;
+    })
+    .addCase(logout.fulfilled, (state) => {
+      state.searchGameWord = null;
+      state.games = [];
     });
 };

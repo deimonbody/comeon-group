@@ -1,6 +1,7 @@
 import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
 import { IState } from './common';
 import * as categoriesActions from './actions';
+import { logout } from '../user/actions';
 
 export const categoriesReducer = (builder: ActionReducerMapBuilder<IState>) => {
   builder
@@ -16,5 +17,9 @@ export const categoriesReducer = (builder: ActionReducerMapBuilder<IState>) => {
     })
     .addCase(categoriesActions.setActiveCategory, (state, actions) => {
       state.activeCategoryId = actions.payload.categoryId;
+    })
+    .addCase(logout.fulfilled, (state) => {
+      state.activeCategoryId = null;
+      state.categories = [];
     });
 };
