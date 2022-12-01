@@ -1,4 +1,4 @@
-import { ICategory } from '../../common/interfaces';
+import { ICategory } from '@route/common/interfaces';
 
 export interface IState {
   isLoading: boolean;

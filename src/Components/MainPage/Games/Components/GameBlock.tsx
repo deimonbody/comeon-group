@@ -1,4 +1,4 @@
-import React from 'react';
+import { IGame } from '@route/common/interfaces';
 import {
   GameBlockWrapper,
   GameBlockImg,
@@ -7,8 +7,8 @@ import {
   GameDescription,
   GameBtn,
   GameBlockLine,
-} from '../../../Styled/Games';
-import { IGame } from '../../../../common/interfaces';
+} from '@route/Components/Styled';
+import React from 'react';
 
 interface IProps {
   game: IGame;

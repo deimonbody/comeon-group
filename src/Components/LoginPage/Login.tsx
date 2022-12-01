@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { ILoginProps } from '../../common/interfaces';
-import { LoginBtn, LoginInput, LoginTitle, LoginWrapper } from '../Styled/Login';
-import { loginSchema } from '../../common/schemas';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { userActions } from '../../store/user';
-import { PATHES } from '../../common/enum';
+import { useAppDispatch, useAppSelector } from '@route/store/hooks';
+import { ILoginProps } from '@route/common/interfaces';
+import { loginSchema } from '@route/common/schemas';
+import { userActions } from '@route/store/user';
+import { PATHES } from '@route/common/enum';
+import { LoginBtn, LoginInput, LoginTitle, LoginWrapper } from '@route/Components/Styled';
 
 export const Login = () => {
   const dispatch = useAppDispatch();

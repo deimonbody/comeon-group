@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { CategoriesTitle, CategoriesWrapper, CategoryName } from '../../Styled/Categories';
-import { Line } from '../../Styled/Games';
-import { categoriesActions } from '../../../store/categories';
+import { CategoriesTitle, CategoriesWrapper, CategoryName, Line } from '@route/Components/Styled';
+
+import { useAppSelector, useAppDispatch } from '@route/store/hooks';
+import { categoriesActions } from '@route/store/categories';
 
 export const Categories = () => {
   const { categories } = useAppSelector((store) => store.categoriesReducer);

@@ -1,4 +1,4 @@
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '@route/store/hooks';
 
 export const useAuthorized = () => {
   const { isLoading, user } = useAppSelector((store) => store.userReducer);

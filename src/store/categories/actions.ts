@@ -1,6 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { ICategory } from '../../common/interfaces';
-import { loadCategoriesAPI } from '../../helper/api.helper';
+import { ICategory } from '@route/common/interfaces';
+import { loadCategoriesAPI } from '@route/helper/api.helper';
 import { CategoriesActions } from './common';
 
 const setCategories = createAsyncThunk(
