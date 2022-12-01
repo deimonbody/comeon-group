@@ -1,6 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { IGame } from '../../common/interfaces';
-import { loadGamesAPI } from '../../helper/api.helper';
+import { IGame } from '@route/common/interfaces';
+import { loadGamesAPI } from '@route/helper/api.helper';
 import { GameActions } from './common';
 
 const setGames = createAsyncThunk(GameActions.SET_GAMES, async (): Promise<IGame[]> => {

@@ -1,4 +1,4 @@
-import { IUser } from '../../common/interfaces';
+import { IUser } from '@route/common/interfaces';
 
 export interface IState {
   isLoading: boolean;

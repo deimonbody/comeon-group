@@ -1,4 +1,4 @@
-import { IGame } from '../../common/interfaces';
+import { IGame } from '@route/common/interfaces';
 
 export interface IState {
   games: IGame[];

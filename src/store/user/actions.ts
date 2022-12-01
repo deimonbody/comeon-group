@@ -1,6 +1,6 @@
 import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
-import { ILoginProps, IUser } from '../../common/interfaces';
-import { loginUserAPI, logoutUserAPI } from '../../helper/api.helper';
+import { ILoginProps, IUser } from '@route/common/interfaces';
+import { loginUserAPI, logoutUserAPI } from '@route/helper/api.helper';
 import { UserActions } from './common';
 
 const setUser = createAsyncThunk(

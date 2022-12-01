@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
-  HeaderWrapper,
+  HeaderFirstLine,
+  HeaderInputBlock,
   HeaderUserBlock,
+  HeaderUserDescription,
   HeaderUserImg,
   HeaderUserInfo,
   HeaderUserName,
-  HeaderUserDescription,
-  HeaderInputBlock,
-  LogOutBtn,
-  HeaderFirstLine,
-} from '../../Styled/Header';
+  HeaderWrapper,
+} from '@route/Components/Styled';
+import { LogOutBtn } from '@route/Components/Styled/Header';
+import { gamesActions } from '@route/store/games';
+import { useAppSelector, useAppDispatch } from '@route/store/hooks';
+import { userActions } from '@route/store/user';
+import React, { useState } from 'react';
 import Search from '../../../images/search.png';
-import { userActions } from '../../../store/user';
-import { gamesActions } from '../../../store/games';
 
 export const Header = () => {
   const { user } = useAppSelector((store) => store.userReducer);
