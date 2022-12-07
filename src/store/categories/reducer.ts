@@ -19,7 +19,7 @@ export const categoriesReducer = (builder: ActionReducerMapBuilder<IState>) => {
       state.activeCategoryId = actions.payload.categoryId;
     })
     .addCase(logout.fulfilled, (state) => {
-      state.activeCategoryId = null;
+      state.activeCategoryId = 0;
       state.categories = [];
     });
 };
