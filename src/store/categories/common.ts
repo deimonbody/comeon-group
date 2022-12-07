@@ -3,7 +3,7 @@ import { ICategory } from '@route/common/interfaces';
 export interface IState {
   isLoading: boolean;
   categories: ICategory[];
-  activeCategoryId: number | null;
+  activeCategoryId: number;
 }
 export enum CategoriesActions {
   SET_CATEGORY_LOADING = 'SET_CATEGORY_LOADING',

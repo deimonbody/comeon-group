@@ -17,8 +17,8 @@ export const CategoriesTitle = styled.p`
     font-size: 1.1rem;
   }
 `;
-export const CategoryName = styled.p`
-  color: ${(props) => props.theme.colors.black};
+export const CategoryName = styled.p<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? '#8edfff' : props.theme.colors.black)};
   font-family: ${(props) => props.theme.fonts.bold};
   font-size: 1.4rem;
   text-transform: uppercase;
