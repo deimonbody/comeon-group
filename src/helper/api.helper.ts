@@ -1,5 +1,5 @@
-import { ICategory, IGame, ILoginProps } from '../common/interfaces';
-import instance from '../config/axios.config';
+import { ICategory, IGame, ILoginProps } from '@route/common/interfaces';
+import instance from '@route/config/axios.config';
 
 const loginUserAPI = async ({ username, password }: ILoginProps) => {
   const result = await instance.post('/login', {

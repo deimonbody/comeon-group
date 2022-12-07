@@ -14,7 +14,8 @@ export const GamesTitle = styled.div`
     font-size: 1.1rem;
   }
 `;
-export const Line = styled.div`
+export const Line = styled.span`
+  display: block;
   position: absolute;
   bottom: -4px;
   left: 0;

@@ -1,8 +1,8 @@
+import { IGame } from '@route/common/interfaces';
+import { GamesWrapper, GamesTitle, Line } from '@route/Components/Styled';
+import { gamesActions } from '@route/store/games';
+import { useAppDispatch, useAppSelector } from '@route/store/hooks';
 import React, { useEffect, useState } from 'react';
-import { IGame } from '../../../common/interfaces';
-import { gamesActions } from '../../../store/games';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { GamesTitle, GamesWrapper, Line } from '../../Styled/Games';
 import { GameBlock } from './Components/GameBlock';
 
 interface IProps {
